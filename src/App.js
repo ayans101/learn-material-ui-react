@@ -9,7 +9,9 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles, ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { blue, orange } from '@material-ui/core/colors';
+import { blue, orange, grey } from '@material-ui/core/colors';
+import 'fontsource-roboto';
+import Typography from '@material-ui/core/Typography';
 
 const useStyle = makeStyles({
   root: {
@@ -22,6 +24,12 @@ const useStyle = makeStyles({
 });
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      color: grey[600],
+      marginBottom: 20
+    }
+  },
   palette: {
     primary: {
       main: blue[400]
@@ -67,6 +75,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
+          <Typography variant='h2' component='div'>
+            Welcome to MUI
+          </Typography>
+          <Typography variant='subtitle'>
+            Learn how to use Material UI
+          </Typography>
           <ButtonStyled />
           <TextField
             variant="filled"
