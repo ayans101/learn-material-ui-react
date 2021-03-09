@@ -12,6 +12,7 @@ import { makeStyles, ThemeProvider, createMuiTheme } from "@material-ui/core/sty
 import { blue, orange, grey } from '@material-ui/core/colors';
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const useStyle = makeStyles({
   root: {
@@ -73,44 +74,46 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <Typography variant='h2' component='div'>
-            Welcome to MUI
-          </Typography>
-          <Typography variant='subtitle'>
-            Learn how to use Material UI
-          </Typography>
-          <ButtonStyled />
-          <TextField
-            variant="filled"
-            // placeholder="type here..."
-            type="email"
-            label="Enter email"
-            placeholder="test@text.com"
-          />
-          <CheckboxExample />
-          <ButtonGroup color="primary" variant="contained">
-            <Button
-              startIcon={<SaveIcon />}
-              size="small"
-              // variant="contained"
-              // color="primary"
-            >
-              Save
-            </Button>
-            <Button
-              startIcon={<DeleteIcon />}
-              size="small"
-              // variant="contained"
-              // color="secondary"
-            >
-              Discard
-            </Button>
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+      <Container maxWidth='xs'>
+        <div className="App">
+          <header className="App-header">
+            <Typography variant='h2' component='div'>
+              Welcome to MUI
+            </Typography>
+            <Typography variant='subtitle'>
+              Learn how to use Material UI
+            </Typography>
+            <ButtonStyled />
+            <TextField
+              variant="filled"
+              // placeholder="type here..."
+              type="email"
+              label="Enter email"
+              placeholder="test@text.com"
+            />
+            <CheckboxExample />
+            <ButtonGroup color="primary" variant="contained">
+              <Button
+                startIcon={<SaveIcon />}
+                size="small"
+                // variant="contained"
+                // color="primary"
+              >
+                Save
+              </Button>
+              <Button
+                startIcon={<DeleteIcon />}
+                size="small"
+                // variant="contained"
+                // color="secondary"
+              >
+                Discard
+              </Button>
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
