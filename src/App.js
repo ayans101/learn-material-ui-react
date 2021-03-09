@@ -1,27 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
-import DeleteIcon from '@material-ui/icons/Delete'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
+function CheckboxExample() {
+  const [checked, setChecked] = React.useState(true);
+  return (
+    <div>
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={checked}
+            icon={<DeleteIcon style={{ color: 'DarkCyan' }}/>}
+            checkedIcon={<SaveIcon />}
+            onChange={(e) => {
+              setChecked(e.target.checked);
+            }}
+            color="primary"
+            inputProps={{
+              "aria-label": "secondary checkbox",
+            }}
+          />
+        }
+        label="Testing Checkbox"
+      />
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonGroup color="primary" variant='contained'>
-          <Button 
+        <CheckboxExample />
+        <ButtonGroup color="primary" variant="contained">
+          <Button
             startIcon={<SaveIcon />}
             size="small"
-            // variant="contained" 
+            // variant="contained"
             // color="primary"
           >
             Save
           </Button>
-          <Button 
+          <Button
             startIcon={<DeleteIcon />}
             size="small"
-            // variant="contained" 
+            // variant="contained"
             // color="secondary"
           >
             Discard
