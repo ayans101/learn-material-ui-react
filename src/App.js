@@ -8,6 +8,25 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyle = makeStyles({
+  root: {
+    margin: 10,
+    borderRadius: 40,
+    background: 'linear-gradient(50deg, #2857a4 48%, cyan 94%)',
+    color: 'white',
+    padding: '10px 30px'
+  }
+});
+
+function ButtonStyled() {
+  const classes = useStyle();
+  return (
+    <Button className={classes.root}>Test Styled Button</Button>
+  )
+
+}
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true);
@@ -38,6 +57,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ButtonStyled />
         <TextField 
           variant="filled"
           // placeholder="type here..."
