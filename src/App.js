@@ -88,17 +88,17 @@ function App() {
             <ButtonStyled />
 
             <Grid container spacing='2' justify='center'>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={2} lg={3}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={2} lg={3}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={2} lg={3}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={2} lg={3}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
             </Grid>
 
