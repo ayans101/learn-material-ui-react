@@ -13,6 +13,8 @@ import { blue, orange, grey } from '@material-ui/core/colors';
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const useStyle = makeStyles({
   root: {
@@ -84,6 +86,22 @@ function App() {
               Learn how to use Material UI
             </Typography>
             <ButtonStyled />
+
+            <Grid container spacing='2' justify='center'>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+            </Grid>
+
             <TextField
               variant="filled"
               // placeholder="type here..."
