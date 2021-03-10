@@ -15,16 +15,27 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   root: {
     margin: 10,
     borderRadius: 40,
     background: "linear-gradient(50deg, #2857a4 48%, cyan 94%)",
     color: "white",
     padding: "10px 30px",
+    flexGrow: 1
   },
-});
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const theme = createMuiTheme({
   typography: {
@@ -74,12 +85,24 @@ function CheckboxExample() {
 }
 
 function App() {
+  const classes = useStyle();
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth='xs'>
         <div className="App">
           <header className="App-header">
-            <Typography variant='h2' component='div'>
+            <AppBar position="static">
+              <Toolbar>
+                <IconButton edge="start" className={classes.menuButton} aria-label="menu">
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" className={classes.title}>
+                  AppBar
+                </Typography>
+                <Button edge="end">Login</Button>
+              </Toolbar>
+            </AppBar>
+            <Typography variant="h2" component="div">
               Welcome to MUI
             </Typography>
             <Typography variant='subtitle'>
